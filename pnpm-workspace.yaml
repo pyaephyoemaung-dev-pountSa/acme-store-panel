@@ -1,0 +1,2 @@
+minimumReleaseAgeExclude:
+  - '@tanstack/eslint-config@0.5.0'
