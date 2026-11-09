@@ -6,8 +6,10 @@ export function DashboardOverview() {
   return (
     <>
       <StatisticsCards />
-      <SalesPipeline />
-      <RevenueChart />
+      <div className="grid grid-cols-2">
+        <SalesPipeline />
+        <RevenueChart />
+      </div>
       <RecentSales />
     </>
   )

@@ -2,30 +2,7 @@ import { Bell, CircleHelp, Download, Globe2 } from 'lucide-react'
 import { dashboardOrders } from '#/constants/dashboard'
 import { SidebarTrigger } from '#/components/ui/sidebar'
 
-function exportOrders() {
-  const rows = [
-    ['Order Ref', 'Buyer', 'Total', 'Status'],
-    ...dashboardOrders.map(({ id, buyer, total, status }) => [
-      id,
-      buyer,
-      total,
-      status,
-    ]),
-  ]
-  const csv = rows
-    .map((row) =>
-      row.map((field) => `"${field.replaceAll('"', '""')}"`).join(','),
-    )
-    .join('\n')
-  const url = URL.createObjectURL(
-    new Blob([csv], { type: 'text/csv;charset=utf-8' }),
-  )
-  const link = document.createElement('a')
-  link.href = url
-  link.download = 'acme-store-orders.csv'
-  link.click()
-  URL.revokeObjectURL(url)
-}
+  
 
 export function DashboardHeader() {
   return (
@@ -48,7 +25,7 @@ export function DashboardHeader() {
         <button
           className="dashboard-button"
           type="button"
-          onClick={exportOrders}
+          // onClick={exportOrders}
         >
           <Download size={16} />
           <span>Export</span>

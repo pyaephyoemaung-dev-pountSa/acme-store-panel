@@ -4,6 +4,7 @@ import type {
   RevenuePoint,
   WeeklySalesPoint,
 } from '#/services/dashboard/types'
+import { LayoutDashboard, Package, ShoppingCart, Users } from 'lucide-react'
 
 export const weeklySalesData: WeeklySalesPoint[] = [
   { week: 'W1', orders: 510, sales: 11600 },
@@ -122,4 +123,36 @@ export const fulfillmentOrders: FulfillmentOrder[] = [
   { id: 'ORD-4790', percent: 71 },
   { id: 'ORD-4786', percent: 35 },
   { id: 'ORD-4782', percent: 96 },
+]
+
+
+export const channelSales = [
+  {
+    name: 'In-store Sales',
+    value: '$7,820.75',
+    change: '+4.3%',
+    delta: '+$322.50 from last month',
+    orders: 'Based on 5,000 orders',
+  },
+  {
+    name: 'Website Sales',
+    value: '$985,937.45',
+    change: '+12.5%',
+    delta: '+$109,500.00 from last month',
+    orders: 'Based on 21,000 orders',
+  },
+  {
+    name: 'Wholesale',
+    value: '$124,650.00',
+    change: '+6.8%',
+    delta: '+$7,935.00 from last month',
+    orders: 'Based on 890 orders',
+  },
+]
+
+export const navigation = [
+  { label: 'Dashboard', icon: LayoutDashboard, active: true },
+  { label: 'Products', icon: Package, active: false },
+  { label: 'Orders', icon: ShoppingCart, active: false, count: '8' },
+  { label: 'Customers', icon: Users, active: false },
 ]

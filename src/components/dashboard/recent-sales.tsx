@@ -99,48 +99,48 @@ export function RecentSales() {
         </div>
       </section>
 
-      <OrderFulfillment />
+      {/* <OrderFulfillment /> */}
     </div>
   )
 }
 
-function OrderFulfillment() {
-  return (
-    <section className="dashboard-panel fulfillment-panel">
-      <div className="fulfillment-heading">
-        <h2>Order Fulfillment</h2>
-        <div>
-          <button type="button" aria-label="Refresh">
-            <RefreshCw size={15} />
-          </button>
-          <button type="button" aria-label="Options">
-            <SlidersHorizontal size={15} />
-          </button>
-        </div>
-      </div>
-      <div className="fulfillment-columns">
-        <span>Order</span>
-        <span>Status</span>
-        <span>Del[%]</span>
-      </div>
-      <div className="fulfillment-list">
-        {fulfillmentOrders.map(({ id, percent }) => (
-          <div className="fulfillment-row" key={id}>
-            <span className="fulfillment-id">{id}</span>
-            <div
-              className="fulfillment-progress"
-              role="progressbar"
-              aria-label={`${id} delivered`}
-              aria-valuenow={percent}
-              aria-valuemin={0}
-              aria-valuemax={100}
-            >
-              <span style={{ width: `${percent}%` }} />
-            </div>
-            <span className="fulfillment-percent">{percent}</span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
+// function OrderFulfillment() {
+//   return (
+//     <section className="dashboard-panel fulfillment-panel">
+//       <div className="fulfillment-heading">
+//         <h2>Order Fulfillment</h2>
+//         <div>
+//           <button type="button" aria-label="Refresh">
+//             <RefreshCw size={15} />
+//           </button>
+//           <button type="button" aria-label="Options">
+//             <SlidersHorizontal size={15} />
+//           </button>
+//         </div>
+//       </div>
+//       <div className="fulfillment-columns">
+//         <span>Order</span>
+//         <span>Status</span>
+//         <span>Del[%]</span>
+//       </div>
+//       <div className="fulfillment-list">
+//         {fulfillmentOrders.map(({ id, percent }) => (
+//           <div className="fulfillment-row" key={id}>
+//             <span className="fulfillment-id">{id}</span>
+//             <div
+//               className="fulfillment-progress"
+//               role="progressbar"
+//               aria-label={`${id} delivered`}
+//               aria-valuenow={percent}
+//               aria-valuemin={0}
+//               aria-valuemax={100}
+//             >
+//               <span style={{ width: `${percent}%` }} />
+//             </div>
+//             <span className="fulfillment-percent">{percent}</span>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   )
+// }

@@ -1,12 +1,14 @@
 import {
   ChartNoAxesCombined,
   ChevronDown,
+  ChevronsUpDown,
   CircleUserRound,
   Command,
   LayoutDashboard,
   Package,
   Settings,
   ShoppingCart,
+  User2,
   Users,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -25,13 +27,9 @@ import {
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../ui/dropdown-menu'
 import { Button } from '../ui/button'
 import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from '../ui/avatar'
+import { navigation } from '#/constants/dashboard'
 
-const navigation = [
-  { label: 'Dashboard', icon: LayoutDashboard, active: true },
-  { label: 'Products', icon: Package, active: false },
-  { label: 'Orders', icon: ShoppingCart, active: false, count: '8' },
-  { label: 'Customers', icon: Users, active: false },
-]
+
 
 function NavigationLink({
   label,
@@ -89,9 +87,7 @@ export function Sidebar() {
           href="#overview"
           aria-label="Acme Store dashboard"
         >
-          <span className="brand-mark">
-            <Command size={19} strokeWidth={2.2} />
-          </span>
+          <div className="flex aspect-square size-8 items-center justify-center rounded-sm bg-primary"><img alt="Acme Store" width="24" height="24" className="size-6 text-primary-foreground invert dark:invert-0" src="https://cdn.shadcnblocks.com/shadcnblocks/block/logos/shadcnblocks-logo.svg"/></div>
           <span className="dashboard-sidebar-copy dashboard-brand-name">
             Acme Store
           </span>
@@ -127,27 +123,28 @@ export function Sidebar() {
       </SidebarContent>
 
       <SidebarFooter className="dashboard-sidebar-footer">
-        <DropdownMenu>
+        <SidebarMenu className=''>
+          <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className='flex justify-around'>
               <div className="">
                 <Avatar>
                   <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                  <AvatarFallback>CN</AvatarFallback>
-                  <AvatarBadge className="bg-green-600 dark:bg-green-800" />
+                  
                 </Avatar>
               </div>
               <div className="flex flex-col items-start">
-                <span>Jack Walsh</span>
-              <span>jack@gmai.com</span>
-              </div>
+                <span>Jack</span>
+              <span>jack@gmail.com</span>
+                </div>
+                <ChevronsUpDown/>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuGroup>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
+              <DropdownMenuItem>Jack Walsh</DropdownMenuItem>
+              <DropdownMenuItem>jack@gmai.com</DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
@@ -156,6 +153,7 @@ export function Sidebar() {
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
+        </SidebarMenu>
       </SidebarFooter>
     </SidebarPrimitive>
   )
