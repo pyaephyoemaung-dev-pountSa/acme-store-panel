@@ -29,16 +29,24 @@ const createColumns = (onViewProduct: (product: IProduct) => void) =>
     }),
     columnHelper.accessor('title', {
       header: 'Title',
+      cell: ({ row }) => {
+        const title = row.original.title
+        return <span className="text-sm font-sans">{title}</span>
+      },
     }),
     columnHelper.accessor('category', {
       header: 'Category',
       cell: ({ row }) => {
         const category = row.original.category
-        return <Badge className="bg-blue-600/70">{category}</Badge>
+        return <Badge className="bg-[#a3a3a3]">{category}</Badge>
       },
     }),
     columnHelper.accessor('brand', {
       header: 'Brand',
+      cell: ({ row }) => {
+        const brand = row.original.brand
+        return <span className="text-sm font-sans">{brand}</span>
+      },
     }),
 
     columnHelper.accessor('tags', {
@@ -48,7 +56,7 @@ const createColumns = (onViewProduct: (product: IProduct) => void) =>
         return (
           <div className="gap-1 flex">
             {tags.map((tag) => (
-              <Badge key={tag} className="bg-blue-600/70">
+              <Badge key={tag} className="bg-[#a3a3a3]">
                 {tag}
               </Badge>
             ))}
@@ -79,9 +87,9 @@ const createColumns = (onViewProduct: (product: IProduct) => void) =>
           <Badge
             className={cn(
               status === 'In Stock'
-                ? 'bg-green-500'
+                ? 'bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-300'
                 : status === 'Low Stock'
-                  ? 'bg-yellow-500'
+                  ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-950 dark:text-yellow-300'
                   : 'bg-destructive',
             )}
           >

@@ -23,13 +23,19 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'acme Store',
+        title: 'acme-store'
       },
     ],
     links: [
       {
         rel: 'stylesheet',
         href: appCss,
+      },
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: 'https://cdn.shadcnblocks.com/shadcnblocks/block/logos/shadcnblocks-logo.svg',
+        className:'size-6 text-primary-foreground invert dark:invert-0',
       },
     ],
   }),
